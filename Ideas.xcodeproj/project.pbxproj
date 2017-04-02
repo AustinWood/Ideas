@@ -23,6 +23,7 @@
 		42088F001E915009003D47B2 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EFF1E915009003D47B2 /* CustomNavController.swift */; };
 		423D1D491E9156FF00434AE2 /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D1D471E9156FF00434AE2 /* Idea+CoreDataClass.swift */; };
 		423D1D4A1E9156FF00434AE2 /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D1D481E9156FF00434AE2 /* Idea+CoreDataProperties.swift */; };
+		423D1D4F1E915D7E00434AE2 /* IndexItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D1D4E1E915D7E00434AE2 /* IndexItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		42088EFF1E915009003D47B2 /* CustomNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		423D1D471E9156FF00434AE2 /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataClass.swift"; path = "../Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
 		423D1D481E9156FF00434AE2 /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataProperties.swift"; path = "../Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		423D1D4E1E915D7E00434AE2 /* IndexItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				42088EFA1E913DB8003D47B2 /* CircleView.swift */,
 				42088EF81E91357A003D47B2 /* Colors.swift */,
 				42088EFF1E915009003D47B2 /* CustomNavController.swift */,
+				423D1D4E1E915D7E00434AE2 /* IndexItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				42088EF51E913422003D47B2 /* Cell.swift in Sources */,
 				42088EC61E91337F003D47B2 /* ViewController.swift in Sources */,
 				42088EC41E91337F003D47B2 /* AppDelegate.swift in Sources */,
+				423D1D4F1E915D7E00434AE2 /* IndexItemCell.swift in Sources */,
 				42088EFB1E913DB8003D47B2 /* CircleView.swift in Sources */,
 				42088EF71E913442003D47B2 /* Todo.swift in Sources */,
 			);

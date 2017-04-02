@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class IndexVC: UIViewController {
+class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let moc: NSManagedObjectContext? = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -28,13 +28,40 @@ class IndexVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-//        setupCollectionView()
-        print(category)
+        setupTableView()
         loadData()
     }
     
     //////////////////////////////////////////////
+    // MARK: - Table View
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func setupTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 75
+        tableView.separatorColor = UIColor.clear
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ideas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IndexItemCell
+        cell.selectionStyle = .none
+        cell.label.text = ideas[indexPath.row].title
+        return cell
+    }
+    
+    //////////////////////////////////////////////
     // MARK: - Core Data
+    
+    var ideas: [Idea] = []
     
     func loadData() {
         let request: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "Idea")
@@ -49,6 +76,8 @@ class IndexVC: UIViewController {
                 }
             }
             print("Number of results: \(results?.count ?? 42000)")
+            ideas = filteredResults
+            tableView.reloadData()
         }
         catch {
             fatalError("Error retrieving grocery item")
