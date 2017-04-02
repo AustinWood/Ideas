@@ -1,9 +1,9 @@
 ////////////////////////
 ////////////////////////
 //
-// segue to list
-// core data
-// tap to add
-// add action in index
+// table view of index items
+// add '+' button in index
 //
 // icon
+// gitignore
+// push
