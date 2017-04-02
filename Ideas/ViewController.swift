@@ -36,18 +36,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - Collection View
     
     func setupCollectionView() {
-//        collectionView.layoutIfNeeded()
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        let collectionViewWidth = collectionView.frame.width
-        let collectionViewHeight = collectionView.frame.height
+        let collectionViewWidth: CGFloat = 375 // collectionView.frame.width
+        let collectionViewHeight: CGFloat = 603 // collectionView.frame.height
         print("width: \(collectionViewWidth), height: \(collectionViewHeight)")
         
         let cellWidth: CGFloat = 150
         let cellHeight = cellWidth
-        let cellSpacing = (collectionViewWidth - (cellWidth * 2)) / 3
-        let lineSpacing: CGFloat = 60
-        let topInset = (collectionViewHeight - (cellHeight * 2) - lineSpacing) / 2
+        let cellSpacing = (collectionViewWidth - (cellWidth * 2)) / 2
+        let lineSpacing: CGFloat = 85
+        let topInset = (collectionViewHeight - (cellHeight * 2) - lineSpacing) / 2 + 40
         
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: topInset, left: cellSpacing, bottom: 0, right: cellSpacing)
