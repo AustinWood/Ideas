@@ -138,6 +138,17 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
     }
     
+    //////////////////////////////////////////////
+    // MARK:- Shake
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        for idea in selectedIdeas {
+            moc?.delete(idea)
+        }
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.saveContext()
+        loadData()
+    }
     
     //////////////////////////////////////////////
     // MARK: - Core Data
