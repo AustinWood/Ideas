@@ -55,6 +55,11 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IndexItemCell
         cell.selectionStyle = .none
         cell.label.text = ideas[indexPath.row].title
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = CustomColor.dark1
+        } else {
+            cell.backgroundColor = CustomColor.dark2
+        }
         return cell
     }
     
