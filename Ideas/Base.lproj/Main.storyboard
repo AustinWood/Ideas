@@ -94,17 +94,17 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collectionView" destination="6nC-Es-R0U" id="ZYm-VM-aBP"/>
-                        <segue destination="kTI-wB-iYH" kind="show" identifier="goToDetail" id="BxJ-tV-36b"/>
+                        <segue destination="kTI-wB-iYH" kind="show" identifier="goToIndex" id="BxJ-tV-36b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--IndexVC-->
         <scene sceneID="d7K-f0-H11">
             <objects>
-                <viewController id="kTI-wB-iYH" sceneMemberID="viewController">
+                <viewController id="kTI-wB-iYH" customClass="IndexVC" customModule="Ideas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ig-t5-d30"/>
                         <viewControllerLayoutGuide type="bottom" id="yfR-y1-T4r"/>
