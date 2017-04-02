@@ -39,27 +39,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7y-PB-iUa" customClass="CircleView" customModule="Ideas" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Cx-HdO">
-                                                            <rect key="frame" x="8" y="8" width="124" height="134"/>
+                                                            <rect key="frame" x="28" y="28" width="94" height="94"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-GL-uck">
-                                                            <rect key="frame" x="8" y="8" width="124" height="134"/>
-                                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="36"/>
+                                                            <rect key="frame" x="8" y="8" width="134" height="134"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="52"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.085868380963802338" green="0.093182317912578583" blue="0.13879266381263733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="h7y-PB-iUa" secondAttribute="leading" constant="8" id="1Qn-Xl-nrB"/>
+                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="h7y-PB-iUa" secondAttribute="leading" constant="28" id="1Qn-Xl-nrB"/>
                                                         <constraint firstAttribute="trailing" secondItem="TcK-GL-uck" secondAttribute="trailing" constant="8" id="7eN-za-bCZ"/>
-                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="h7y-PB-iUa" secondAttribute="top" constant="8" id="Bc5-dI-AW7"/>
+                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="h7y-PB-iUa" secondAttribute="top" constant="28" id="Bc5-dI-AW7"/>
                                                         <constraint firstItem="TcK-GL-uck" firstAttribute="top" secondItem="h7y-PB-iUa" secondAttribute="top" constant="8" id="Dto-AY-eSp"/>
                                                         <constraint firstItem="TcK-GL-uck" firstAttribute="leading" secondItem="h7y-PB-iUa" secondAttribute="leading" constant="8" id="EKn-d1-8sF"/>
-                                                        <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" constant="8" id="Z4h-Sa-ifr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" constant="8" id="uRn-JC-hWx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" constant="28" id="Z4h-Sa-ifr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" constant="28" id="uRn-JC-hWx"/>
                                                         <constraint firstAttribute="bottom" secondItem="TcK-GL-uck" secondAttribute="bottom" constant="8" id="ugm-Pa-LQn"/>
                                                     </constraints>
                                                 </view>
@@ -83,7 +83,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.054604329168796539" green="0.057814419269561768" blue="0.10340989381074905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6nC-Es-R0U" secondAttribute="bottom" id="JDO-sU-vWu"/>
                             <constraint firstItem="6nC-Es-R0U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QUS-4E-iuh"/>
@@ -94,11 +94,30 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collectionView" destination="6nC-Es-R0U" id="ZYm-VM-aBP"/>
+                        <segue destination="kTI-wB-iYH" kind="show" identifier="goToDetail" id="BxJ-tV-36b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d7K-f0-H11">
+            <objects>
+                <viewController id="kTI-wB-iYH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ig-t5-d30"/>
+                        <viewControllerLayoutGuide type="bottom" id="yfR-y1-T4r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aaP-Ed-DFt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.054604329168796539" green="0.057814419269561768" blue="0.10340989381074905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yz4-TN-zfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="38"/>
         </scene>
     </scenes>
     <resources>

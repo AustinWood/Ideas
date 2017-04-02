@@ -77,7 +77,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected \(indexPath.row)")
+        performSegue(withIdentifier: "goToDetail", sender: self)
     }
-
+    
+    //////////////////////////////////////////////
+    // MARK: - Collection View
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetail" {
+//            let destinationController = segue.destination as! EditHabitVC
+//            destinationController.currentHabit = nil
+        }
+    }
 }
 
