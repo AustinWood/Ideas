@@ -20,16 +20,24 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let imgArr: [String?] = ["milk", "amazon"]
+    let category: [String] = ["groceries", "amazon", "today", "week"]
+    let imageName: [String?] = ["milk", "amazon", nil, nil]
+    let bigLabelText: [String?] = [nil, nil, "今日", "今週"]
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgArr.count
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Cell
-        if imgArr[indexPath.row] != nil {
-            cell.image.image = UIImage(named: imgArr[indexPath.row]!)
+        if imageName[indexPath.row] != nil {
+            cell.image.isHidden = false
+            cell.image.image = UIImage(named: imageName[indexPath.row]!)
+            cell.bigLabel.text = ""
+        } else {
+            cell.image.isHidden = true
+            cell.bigLabel.text = bigLabelText[indexPath.row]
         }
         
         return cell

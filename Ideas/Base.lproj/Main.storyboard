@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,18 +39,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping_cart" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Cx-HdO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Cx-HdO">
+                                                    <rect key="frame" x="8" y="8" width="89" height="89"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-GL-uck">
+                                                    <rect key="frame" x="8" y="8" width="89" height="89"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="36"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" id="6xz-Cq-lee"/>
-                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leading" id="Ila-kA-yjp"/>
-                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="top" id="ePM-Kk-Dyw"/>
-                                            <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" id="wDg-HH-0uv"/>
+                                            <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" constant="8" id="6xz-Cq-lee"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="TcK-GL-uck" secondAttribute="trailing" id="7rs-gK-igc"/>
+                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leading" constant="8" id="Ila-kA-yjp"/>
+                                            <constraint firstItem="TcK-GL-uck" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="topMargin" id="Rh9-2V-uFf"/>
+                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="top" constant="8" id="ePM-Kk-Dyw"/>
+                                            <constraint firstItem="TcK-GL-uck" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leadingMargin" id="exr-2o-jEH"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="TcK-GL-uck" secondAttribute="bottom" id="uUN-VD-sss"/>
+                                            <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" constant="8" id="wDg-HH-0uv"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="bigLabel" destination="TcK-GL-uck" id="7hP-vn-IjI"/>
                                             <outlet property="image" destination="zYM-Cx-HdO" id="hJ8-qy-gQ6"/>
                                         </connections>
                                     </collectionViewCell>
@@ -79,6 +91,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="shopping_cart" width="80" height="80"/>
+        <image name="milk" width="512" height="512"/>
     </resources>
 </document>
