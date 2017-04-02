@@ -15,6 +15,9 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var category: String = ""
     
+    var ideas: [Idea] = []
+    var selectedIdeas: [Idea] = []
+    
     //////////////////////////////////////////////
     // MARK: - Initialization
     
@@ -54,15 +57,35 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let idea = ideas[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IndexItemCell
         cell.selectionStyle = .none
-        cell.label.text = ideas[indexPath.row].title
+        cell.label.text = idea.title
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = CustomColor.dark1
+            if selectedIdeas.contains(idea) {
+                cell.backgroundColor = CustomColor.blueDark
+            } else {
+                cell.backgroundColor = CustomColor.dark1
+            }
         } else {
-            cell.backgroundColor = CustomColor.dark2
+            if selectedIdeas.contains(idea) {
+                cell.backgroundColor = CustomColor.blueLight
+            } else {
+                cell.backgroundColor = CustomColor.dark2
+            }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected!")
+        let idea = ideas[indexPath.row]
+        if selectedIdeas.contains(idea) {
+            selectedIdeas = selectedIdeas.filter() { $0 !== idea }
+        } else {
+            selectedIdeas.append(idea)
+        }
+        tableView.reloadData()
     }
     
     //////////////////////////////////////////////
@@ -118,8 +141,6 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //////////////////////////////////////////////
     // MARK: - Core Data
-    
-    var ideas: [Idea] = []
     
     func addIdea() {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
