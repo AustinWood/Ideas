@@ -20,7 +20,7 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(loadData))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addIdea))
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -68,6 +68,30 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Core Data
     
     var ideas: [Idea] = []
+    
+    func addIdea() {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField: UITextField) in
+            textField.autocapitalizationType = .sentences
+            textField.autocorrectionType = .yes
+        }
+        let addAction = UIAlertAction(title: "Add", style: .default) { [weak self] (action: UIAlertAction) in
+            let ideaTitle: String?
+            if alertController.textFields?.first?.text != "" {
+                ideaTitle = alertController.textFields?.first?.text
+            } else { return }
+            let newIdea = Idea(context: (self?.moc)!)
+            newIdea.title = ideaTitle
+            newIdea.category = self?.category
+            do { try self?.moc?.save() }
+            catch { fatalError("Error storing data") }
+            self?.loadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(addAction)
+        present(alertController, animated: true, completion: nil)
+    }
     
     func loadData() {
         let request: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "Idea")
