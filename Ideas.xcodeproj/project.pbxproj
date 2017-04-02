@@ -15,6 +15,9 @@
 		42088ED11E91337F003D47B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42088ECF1E91337F003D47B2 /* LaunchScreen.storyboard */; };
 		42088EDC1E91337F003D47B2 /* IdeasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EDB1E91337F003D47B2 /* IdeasTests.swift */; };
 		42088EE71E91337F003D47B2 /* IdeasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EE61E91337F003D47B2 /* IdeasUITests.swift */; };
+		42088EF51E913422003D47B2 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF41E913422003D47B2 /* Cell.swift */; };
+		42088EF71E913442003D47B2 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF61E913442003D47B2 /* Todo.swift */; };
+		42088EF91E91357A003D47B2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF81E91357A003D47B2 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		42088EE21E91337F003D47B2 /* IdeasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdeasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42088EE61E91337F003D47B2 /* IdeasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasUITests.swift; sourceTree = "<group>"; };
 		42088EE81E91337F003D47B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42088EF41E913422003D47B2 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		42088EF61E913442003D47B2 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		42088EF81E91357A003D47B2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,16 @@
 		42088EC21E91337F003D47B2 /* Ideas */ = {
 			isa = PBXGroup;
 			children = (
-				42088EC31E91337F003D47B2 /* AppDelegate.swift */,
-				42088EC51E91337F003D47B2 /* ViewController.swift */,
+				42088EF61E913442003D47B2 /* Todo.swift */,
 				42088EC71E91337F003D47B2 /* Main.storyboard */,
+				42088EC51E91337F003D47B2 /* ViewController.swift */,
+				42088EF41E913422003D47B2 /* Cell.swift */,
 				42088ECD1E91337F003D47B2 /* Assets.xcassets */,
+				42088EC31E91337F003D47B2 /* AppDelegate.swift */,
 				42088ECF1E91337F003D47B2 /* LaunchScreen.storyboard */,
 				42088ED21E91337F003D47B2 /* Info.plist */,
 				42088ECA1E91337F003D47B2 /* Ideas.xcdatamodeld */,
+				42088EF81E91357A003D47B2 /* Colors.swift */,
 			);
 			path = Ideas;
 			sourceTree = "<group>";
@@ -266,8 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42088ECC1E91337F003D47B2 /* Ideas.xcdatamodeld in Sources */,
+				42088EF91E91357A003D47B2 /* Colors.swift in Sources */,
+				42088EF51E913422003D47B2 /* Cell.swift in Sources */,
 				42088EC61E91337F003D47B2 /* ViewController.swift in Sources */,
 				42088EC41E91337F003D47B2 /* AppDelegate.swift in Sources */,
+				42088EF71E913442003D47B2 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
