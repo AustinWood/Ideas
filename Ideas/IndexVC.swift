@@ -20,6 +20,7 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(loadData))
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
