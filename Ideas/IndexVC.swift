@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class IndexVC: UIViewController {
+    
+    let moc: NSManagedObjectContext? = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var category: String = ""
     
@@ -27,5 +30,28 @@ class IndexVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
 //        setupCollectionView()
         print(category)
+        loadData()
+    }
+    
+    //////////////////////////////////////////////
+    // MARK: - Core Data
+    
+    func loadData() {
+        let request: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "Idea")
+        do {
+            let results = try moc?.fetch(request)
+            var filteredResults: [Idea] = []
+            for result in results! {
+                let idea: Idea = result as! Idea
+                if idea.category == category {
+                    filteredResults.append(idea)
+                    print(idea.title!)
+                }
+            }
+            print("Number of results: \(results?.count ?? 42000)")
+        }
+        catch {
+            fatalError("Error retrieving grocery item")
+        }
     }
 }
