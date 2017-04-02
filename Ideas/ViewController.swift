@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    let moc: NSManagedObjectContext? = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -31,30 +34,34 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.navigationController?.isNavigationBarHidden = true
         setupCollectionView()
         addGestureRecognizers()
+        loadData()
+        didLongPress = false
     }
     
     //////////////////////////////////////////////
     // MARK:- Gesture Recognizers
     
     func addGestureRecognizers() {
-        // Single and double tap recognizers for category cells
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.didSingleTap))
         singleTap.numberOfTapsRequired = 1
         self.collectionView!.addGestureRecognizer(singleTap)
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(self.didDoubleTap))
-        doubleTap.numberOfTapsRequired = 2
-        self.collectionView!.addGestureRecognizer(doubleTap)
-        singleTap.require(toFail: doubleTap)
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        longPressGesture.minimumPressDuration = 0.3
+        self.collectionView.addGestureRecognizer(longPressGesture)
     }
     
     func didSingleTap(_ gesture: UITapGestureRecognizer) {
         if validateTap(gestureLocation: gesture.location(in: self.collectionView!)) {
-//            startStopTimer(project: selectedProject!)
+            addIdea(category: selectedCategory)
         }
     }
     
-    func didDoubleTap(_ gesture: UITapGestureRecognizer) {
-        if validateTap(gestureLocation: gesture.location(in: self.collectionView!)) {
+    var didLongPress = false
+    
+    func handleLongPress(_ gesture: UITapGestureRecognizer) {
+        if validateTap(gestureLocation: gesture.location(in: self.collectionView!)) && !didLongPress {
+            didLongPress = true
             performSegue(withIdentifier: "goToIndex", sender: self)
         }
     }
@@ -112,37 +119,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        selectedCategory = category[indexPath.row]
-//        addIdea(categoty: category[indexPath.row])
-////        performSegue(withIdentifier: "goToIndex", sender: self)
-//    }
-    
     //////////////////////////////////////////////
     // MARK: - Core Data
     
-    func addIdea(categoty: String) {
+    func addIdea(category: String) {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addTextField { (textField: UITextField) in
             textField.autocapitalizationType = .sentences
             textField.autocorrectionType = .yes
         }
         let addAction = UIAlertAction(title: "Add", style: .default) { [weak self] (action: UIAlertAction) in
-            let projectTitle: String?
+            let ideaTitle: String?
             if alertController.textFields?.first?.text != "" {
-                projectTitle = alertController.textFields?.first?.text
+                ideaTitle = alertController.textFields?.first?.text
             } else { return }
-//            let newProject = Project(context: (self?.moc)!)
-//            newProject.title = projectTitle
-//            newProject.order = Int16((self?.projects.count)!)
-//            do { try self?.moc?.save() }
-//            catch { fatalError("Error storing data") }
-//            self?.loadData()
+            let newIdea = Idea(context: (self?.moc)!)
+            newIdea.title = ideaTitle
+            newIdea.category = category
+            do { try self?.moc?.save() }
+            catch { fatalError("Error storing data") }
+            self?.loadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alertController.addAction(cancelAction)
         alertController.addAction(addAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+    func loadData() {
+        let request: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: "Idea")
+        do {
+            let results = try moc?.fetch(request)
+            print("Number of results: \(results?.count ?? 42000)")
+        }
+        catch {
+            fatalError("Error retrieving grocery item")
+        }
     }
     
     //////////////////////////////////////////////

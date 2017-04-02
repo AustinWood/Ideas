@@ -21,6 +21,8 @@
 		42088EFB1E913DB8003D47B2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EFA1E913DB8003D47B2 /* CircleView.swift */; };
 		42088EFE1E9147D0003D47B2 /* IndexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EFD1E9147D0003D47B2 /* IndexVC.swift */; };
 		42088F001E915009003D47B2 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EFF1E915009003D47B2 /* CustomNavController.swift */; };
+		423D1D491E9156FF00434AE2 /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D1D471E9156FF00434AE2 /* Idea+CoreDataClass.swift */; };
+		423D1D4A1E9156FF00434AE2 /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D1D481E9156FF00434AE2 /* Idea+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		42088EFA1E913DB8003D47B2 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		42088EFD1E9147D0003D47B2 /* IndexVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexVC.swift; sourceTree = "<group>"; };
 		42088EFF1E915009003D47B2 /* CustomNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
+		423D1D471E9156FF00434AE2 /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataClass.swift"; path = "../Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
+		423D1D481E9156FF00434AE2 /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataProperties.swift"; path = "../Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,18 +116,13 @@
 			isa = PBXGroup;
 			children = (
 				42088EF61E913442003D47B2 /* Todo.swift */,
-				42088EC71E91337F003D47B2 /* Main.storyboard */,
-				42088EC51E91337F003D47B2 /* ViewController.swift */,
-				42088EFD1E9147D0003D47B2 /* IndexVC.swift */,
-				42088EF41E913422003D47B2 /* Cell.swift */,
-				42088EFA1E913DB8003D47B2 /* CircleView.swift */,
-				42088EF81E91357A003D47B2 /* Colors.swift */,
+				423D1D4B1E91570B00434AE2 /* Model */,
+				423D1D4C1E91570F00434AE2 /* View */,
+				423D1D4D1E91571300434AE2 /* Controller */,
 				42088ECD1E91337F003D47B2 /* Assets.xcassets */,
 				42088EC31E91337F003D47B2 /* AppDelegate.swift */,
 				42088ECF1E91337F003D47B2 /* LaunchScreen.storyboard */,
 				42088ED21E91337F003D47B2 /* Info.plist */,
-				42088ECA1E91337F003D47B2 /* Ideas.xcdatamodeld */,
-				42088EFF1E915009003D47B2 /* CustomNavController.swift */,
 			);
 			path = Ideas;
 			sourceTree = "<group>";
@@ -144,6 +143,37 @@
 				42088EE81E91337F003D47B2 /* Info.plist */,
 			);
 			path = IdeasUITests;
+			sourceTree = "<group>";
+		};
+		423D1D4B1E91570B00434AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42088ECA1E91337F003D47B2 /* Ideas.xcdatamodeld */,
+				423D1D471E9156FF00434AE2 /* Idea+CoreDataClass.swift */,
+				423D1D481E9156FF00434AE2 /* Idea+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		423D1D4C1E91570F00434AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42088EC71E91337F003D47B2 /* Main.storyboard */,
+				42088EF41E913422003D47B2 /* Cell.swift */,
+				42088EFA1E913DB8003D47B2 /* CircleView.swift */,
+				42088EF81E91357A003D47B2 /* Colors.swift */,
+				42088EFF1E915009003D47B2 /* CustomNavController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		423D1D4D1E91571300434AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42088EC51E91337F003D47B2 /* ViewController.swift */,
+				42088EFD1E9147D0003D47B2 /* IndexVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423D1D491E9156FF00434AE2 /* Idea+CoreDataClass.swift in Sources */,
 				42088ECC1E91337F003D47B2 /* Ideas.xcdatamodeld in Sources */,
 				42088F001E915009003D47B2 /* CustomNavController.swift in Sources */,
 				42088EFE1E9147D0003D47B2 /* IndexVC.swift in Sources */,
 				42088EF91E91357A003D47B2 /* Colors.swift in Sources */,
+				423D1D4A1E9156FF00434AE2 /* Idea+CoreDataProperties.swift in Sources */,
 				42088EF51E913422003D47B2 /* Cell.swift in Sources */,
 				42088EC61E91337F003D47B2 /* ViewController.swift in Sources */,
 				42088EC41E91337F003D47B2 /* AppDelegate.swift in Sources */,
@@ -544,6 +576,7 @@
 				42088EED1E91337F003D47B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42088EEE1E91337F003D47B2 /* Build configuration list for PBXNativeTarget "IdeasTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +585,7 @@
 				42088EF01E91337F003D47B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42088EF11E91337F003D47B2 /* Build configuration list for PBXNativeTarget "IdeasUITests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +594,7 @@
 				42088EF31E91337F003D47B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
