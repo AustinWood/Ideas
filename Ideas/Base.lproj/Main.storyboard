@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,26 +38,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Cx-HdO">
-                                                    <rect key="frame" x="8" y="8" width="89" height="89"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-GL-uck">
-                                                    <rect key="frame" x="8" y="8" width="89" height="89"/>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="36"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7y-PB-iUa" customClass="CircleView" customModule="Ideas" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Cx-HdO">
+                                                            <rect key="frame" x="8" y="8" width="89" height="89"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-GL-uck">
+                                                            <rect key="frame" x="8" y="8" width="89" height="89"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="36"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.085868380963802338" green="0.093182317912578583" blue="0.13879266381263733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="h7y-PB-iUa" secondAttribute="leading" constant="8" id="1Qn-Xl-nrB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TcK-GL-uck" secondAttribute="trailing" constant="8" id="7eN-za-bCZ"/>
+                                                        <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="h7y-PB-iUa" secondAttribute="top" constant="8" id="Bc5-dI-AW7"/>
+                                                        <constraint firstItem="TcK-GL-uck" firstAttribute="top" secondItem="h7y-PB-iUa" secondAttribute="top" constant="8" id="Dto-AY-eSp"/>
+                                                        <constraint firstItem="TcK-GL-uck" firstAttribute="leading" secondItem="h7y-PB-iUa" secondAttribute="leading" constant="8" id="EKn-d1-8sF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" constant="8" id="Z4h-Sa-ifr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" constant="8" id="uRn-JC-hWx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TcK-GL-uck" secondAttribute="bottom" constant="8" id="ugm-Pa-LQn"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="zYM-Cx-HdO" secondAttribute="bottom" constant="8" id="6xz-Cq-lee"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="TcK-GL-uck" secondAttribute="trailing" id="7rs-gK-igc"/>
-                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leading" constant="8" id="Ila-kA-yjp"/>
-                                            <constraint firstItem="TcK-GL-uck" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="topMargin" id="Rh9-2V-uFf"/>
-                                            <constraint firstItem="zYM-Cx-HdO" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="top" constant="8" id="ePM-Kk-Dyw"/>
-                                            <constraint firstItem="TcK-GL-uck" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leadingMargin" id="exr-2o-jEH"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="TcK-GL-uck" secondAttribute="bottom" id="uUN-VD-sss"/>
-                                            <constraint firstAttribute="trailing" secondItem="zYM-Cx-HdO" secondAttribute="trailing" constant="8" id="wDg-HH-0uv"/>
+                                            <constraint firstAttribute="trailing" secondItem="h7y-PB-iUa" secondAttribute="trailing" id="5s7-uX-XSI"/>
+                                            <constraint firstItem="h7y-PB-iUa" firstAttribute="top" secondItem="QWu-fC-v9u" secondAttribute="top" id="OUC-vf-nTB"/>
+                                            <constraint firstAttribute="bottom" secondItem="h7y-PB-iUa" secondAttribute="bottom" id="j13-te-7xJ"/>
+                                            <constraint firstItem="h7y-PB-iUa" firstAttribute="leading" secondItem="QWu-fC-v9u" secondAttribute="leading" id="ptH-DV-P3a"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="bigLabel" destination="TcK-GL-uck" id="7hP-vn-IjI"/>
@@ -72,7 +83,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.085868380963802338" green="0.093182317912578583" blue="0.13879266381263733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.054604329168796539" green="0.057814419269561768" blue="0.10340989381074905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6nC-Es-R0U" secondAttribute="bottom" constant="16" id="6I1-BV-ayS"/>
                             <constraint firstAttribute="trailing" secondItem="6nC-Es-R0U" secondAttribute="trailing" constant="16" id="One-Rn-hNC"/>

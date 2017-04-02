@@ -18,6 +18,7 @@
 		42088EF51E913422003D47B2 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF41E913422003D47B2 /* Cell.swift */; };
 		42088EF71E913442003D47B2 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF61E913442003D47B2 /* Todo.swift */; };
 		42088EF91E91357A003D47B2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EF81E91357A003D47B2 /* Colors.swift */; };
+		42088EFB1E913DB8003D47B2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42088EFA1E913DB8003D47B2 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		42088EF41E913422003D47B2 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		42088EF61E913442003D47B2 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		42088EF81E91357A003D47B2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		42088EFA1E913DB8003D47B2 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +111,13 @@
 				42088EC71E91337F003D47B2 /* Main.storyboard */,
 				42088EC51E91337F003D47B2 /* ViewController.swift */,
 				42088EF41E913422003D47B2 /* Cell.swift */,
+				42088EFA1E913DB8003D47B2 /* CircleView.swift */,
+				42088EF81E91357A003D47B2 /* Colors.swift */,
 				42088ECD1E91337F003D47B2 /* Assets.xcassets */,
 				42088EC31E91337F003D47B2 /* AppDelegate.swift */,
 				42088ECF1E91337F003D47B2 /* LaunchScreen.storyboard */,
 				42088ED21E91337F003D47B2 /* Info.plist */,
 				42088ECA1E91337F003D47B2 /* Ideas.xcdatamodeld */,
-				42088EF81E91357A003D47B2 /* Colors.swift */,
 			);
 			path = Ideas;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				42088EF51E913422003D47B2 /* Cell.swift in Sources */,
 				42088EC61E91337F003D47B2 /* ViewController.swift in Sources */,
 				42088EC41E91337F003D47B2 /* AppDelegate.swift in Sources */,
+				42088EFB1E913DB8003D47B2 /* CircleView.swift in Sources */,
 				42088EF71E913442003D47B2 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
