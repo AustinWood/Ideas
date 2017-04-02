@@ -42,6 +42,7 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 75
         tableView.separatorColor = UIColor.clear
+        tableView.contentInset = UIEdgeInsets(top: -107, left: 0, bottom: 0, right: 0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
