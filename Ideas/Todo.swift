@@ -4,5 +4,4 @@
 // replace milk with fruit
 //
 // icon
-// gitignore
 // push

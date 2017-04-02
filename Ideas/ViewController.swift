@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     
     let category: [String] = ["amazon", "groceries", "week", "today"]
-    let imageName: [String?] = ["amazon", "milk", nil, nil]
+    let imageName: [String?] = ["amazon", "eggplant", nil, nil]
     let bigLabelText: [String?] = [nil, nil, "今週", "今日"]
     
     //////////////////////////////////////////////
