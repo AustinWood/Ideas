@@ -28,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         setupCollectionView()
     }
     
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - Collection View
     
     func setupCollectionView() {
-        collectionView.layoutIfNeeded()
+//        collectionView.layoutIfNeeded()
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
         let collectionViewWidth = collectionView.frame.width
@@ -55,6 +56,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         collectionView.collectionViewLayout = layout
         collectionView.layoutIfNeeded()
+        collectionView.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
