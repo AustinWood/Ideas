@@ -10,6 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let category: [String] = ["groceries", "amazon", "today", "week"]
+    let imageName: [String?] = ["milk", "amazon", nil, nil]
+    let bigLabelText: [String?] = [nil, nil, "今日", "今週"]
+    
+    //////////////////////////////////////////////
+    // MARK: - Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,13 +27,36 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return UIStatusBarStyle.lightContent
     }
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    override func viewWillAppear(_ animated: Bool) {
+        setupCollectionView()
+    }
     
-    let category: [String] = ["groceries", "amazon", "today", "week"]
-    let imageName: [String?] = ["milk", "amazon", nil, nil]
-    let bigLabelText: [String?] = [nil, nil, "今日", "今週"]
+    //////////////////////////////////////////////
+    // MARK: - Collection View
     
-    
+    func setupCollectionView() {
+        collectionView.layoutIfNeeded()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        let collectionViewWidth = collectionView.frame.width
+        let collectionViewHeight = collectionView.frame.height
+        print("width: \(collectionViewWidth), height: \(collectionViewHeight)")
+        
+        let cellWidth: CGFloat = 150
+        let cellHeight = cellWidth
+        let cellSpacing = (collectionViewWidth - (cellWidth * 2)) / 3
+        let lineSpacing: CGFloat = 60
+        let topInset = (collectionViewHeight - (cellHeight * 2) - lineSpacing) / 2
+        
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: topInset, left: cellSpacing, bottom: 0, right: cellSpacing)
+        layout.minimumInteritemSpacing = cellSpacing
+        layout.minimumLineSpacing = cellSpacing
+        
+        collectionView.collectionViewLayout = layout
+        collectionView.layoutIfNeeded()
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return category.count
     }
