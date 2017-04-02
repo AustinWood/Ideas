@@ -66,6 +66,57 @@ class IndexVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     //////////////////////////////////////////////
+    // MARK:- Swipe to Edit / Delete Row
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let idea = ideas[indexPath.row]
+        let editButton = UITableViewRowAction(style: .default, title: "Edit     ") { (action: UITableViewRowAction!, indexPath: IndexPath!) -> Void in
+            self.editIdea(idea: idea)
+        }
+        editButton.backgroundColor = CustomColor.green
+        let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action: UITableViewRowAction!, indexPath: IndexPath!) -> Void in
+            self.deleteIdea(idea: idea)
+        }
+        deleteButton.backgroundColor = CustomColor.pinkHot
+        return [deleteButton, editButton]
+    }
+    
+    func editIdea(idea: Idea) {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField { (textField: UITextField) in
+            textField.autocapitalizationType = .sentences
+            textField.autocorrectionType = .yes
+            textField.text = idea.title
+        }
+        let updateAction = UIAlertAction(title: "Update", style: .default) { [weak self] (action: UIAlertAction) in
+            let ideaTitle: String?
+            if alertController.textFields?.first?.text != "" {
+                ideaTitle = alertController.textFields?.first?.text
+            } else { return }
+            idea.title = ideaTitle
+            do { try self?.moc?.save() }
+            catch { fatalError("Error storing data") }
+            self?.loadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(updateAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func deleteIdea(idea: Idea) {
+        moc?.delete(idea)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.saveContext()
+        loadData()
+    }
+    
+    
+    //////////////////////////////////////////////
     // MARK: - Core Data
     
     var ideas: [Idea] = []
