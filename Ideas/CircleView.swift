@@ -14,7 +14,7 @@ class CircleView: UIView {
         self.backgroundColor = CustomColor.dark1
         self.layer.cornerRadius = self.frame.height / 2
         layer.borderWidth = 0.5
-        layer.borderColor = CustomColor.gray.cgColor
+        layer.borderColor = UIColor.white.cgColor // CustomColor.gray.cgColor
     }
     
 }
